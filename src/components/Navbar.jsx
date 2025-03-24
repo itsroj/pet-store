@@ -18,11 +18,11 @@ function Navbar () {
                     <NavLink to="/pets/about">About Us</NavLink>
                 </ul>
             </div>
-            <div className="Logo-container">
-            <Link to="/">
-                <img src={Pawradiselogo} alt="Logo" className="logo-picture"/>
-            </Link>
-                <p>"Everything your pet needs, <br></br> all in one place."</p>
+            <div className="logoContainer">
+                <Link to="/">
+                    <img src={Pawradiselogo} alt="Logo" className="logoPicture"/>
+                </Link>
+                <p>"Everything<br></br>your pet needs,<br></br>all in one place."</p>
             </div>
         </nav>
     )

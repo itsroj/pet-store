@@ -23,29 +23,46 @@ body, html {
     position: relative;
 }
 
-.navbar  {
+.navbar {
     display: flex;
     justify-content: center; 
     align-items: center;
     position: relative; 
-    padding: 15px 40px;
+    padding: 30px 40px;   /* changes the position of the navbar > navlink */
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
     padding: 0;
     margin: 0;
     position: absolute;
     right: 40px;   /* this one puts the navbar to the right corner */
 }
 
-.Logo-container {
+/* this changes the font from the navbar links */
+.navbar a,
+.navbar NavLink {
+    color: blanchedalmond;
+    text-decoration: none; /* deletes the underline > from the link */
+    font-weight: 300;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+    /* transition: all 0.3s ease; */
+}
+
+.navbar a:hover,
+.navbar NavLink:hover {
+    color: blanchedalmond;
+    text-shadow: 0 0 5px rgba(255, 235, 205, 0.8); /* first two numbers (vertical and horizontal offset): If you were to change those values (e.g., 2px 2px), the shadow would appear below and to the right of the text */
+}
+
+.logoContainer {
     position: absolute;
-    top: 30%;
-    left: 58%; /* This positions it slightly to the right of center */
-    transform: translate(-50%, -50%); /* This centers the container itself */
+    top: 42%;
+    left: 58%; /* this positions it slightly to the right of center */
+    transform: translate(-50%, -50%); /* this centers the container itself */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,11 +70,11 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1; 
+    flex: 1;
+    line-height: 1.5em;
 }
 
-.logo-picture {
-    height: 70px;
+.logoPicture {
+    height: 100px;
     
 }
-

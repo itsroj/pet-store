@@ -15,31 +15,31 @@ const ShopByCategory = () => {
             <div className="petCard">
                 <NavLink to="/pets/dogs">
                 <img src={DogPicture} alt="Dog Picture" />
-                <p>Dogs</p> 
+                <p className="petCardCategoryName">Dogs</p> 
                 </NavLink>
             </div>
             <div className="petCard">
                 <NavLink to="/pets/cats">
                 <img src={CatPicture} alt="Cat Picture" />
-                <p>Cats</p> 
+                <p className="petCardCategoryName">Cats</p> 
                 </NavLink>
             </div>
             <div className="petCard">
                 <NavLink to="/pets/smallPets">
                 <img src={SmallPetsPicture} alt="Small Pets Picture" />
-                <p>Small Pets</p> 
+                <p className="petCardCategoryName">Small Pets</p> 
                 </NavLink>
             </div>
             <div className="petCard">
                 <NavLink to="/pets/birds">
                 <img src={BirdsPicture} alt="Birds Picture" />
-                <p>Birds</p> 
+                <p className="petCardCategoryName">Birds</p> 
                 </NavLink>
             </div>
             <div className="petCard">
                <NavLink to="/pets/fish">
                <img src={FishPicture} alt="Fish Picture" />
-               <p>Fish</p> 
+               <p className="petCardCategoryName">Fish</p> 
                </NavLink>
             </div>
         </div>

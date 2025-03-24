@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footerContainer">
       <div>
-        <p>Address: <br></br>Pawradise HQ77<br></br> Flufftail LaneSnuggletown<br></br> Pet 33139 Animal Republic</p> 
+        <p>Address: <br></br>Pawradise HQ<br></br>66 Flufftail Lane<br></br>33139 Snuggletown<br></br>Animal Republic</p> 
       </div>
       <div>
         <p>Contact <br></br> Phone: 677 346 028 <br></br> E-Mail: contact@pawradise.com</p>
