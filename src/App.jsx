@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className = "App">
-      <Navbar />
+      <Navbar /> 
       <Routes>
         <Route path="/" element={<HomepagePage />} />
         <Route path="/pets/dogs" element={<DogsPage />} />
@@ -40,11 +40,9 @@ function App() {
         <Route path="/admin" element={<AdminPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes> 
-      <ShopByCategory />
-      <Bestsellers />
       <Footer />
-  </div>
-  );
-}
+     </div>
+  )
+};
 
 export default App;
