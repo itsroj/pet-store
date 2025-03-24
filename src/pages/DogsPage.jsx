@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import "./Pets.css";
 
 
 const DogsPage = () => {
   const [dogProducts, setDogProducts] = useState([]);
+  const [filter, setFilter] = useState("");
    //here we need get all of the projects from our server
    useEffect(() => {
     axios
@@ -23,12 +25,23 @@ const DogsPage = () => {
 
   return (
     <div>
-        There is the dogs products
-      <button>snacks</button>
-      <div>
-      {dogProducts.map((oneProduct) => {
-        return <div key={oneProduct.id}>
+      <p>Dog Products</p>
+      <button onClick={() => {setFilter("Food & Snacks")}}>Food & Snacks</button>
+      <button onClick={() => {setFilter("Toys & Enrichment")}}>Toys & Enrichment</button>
+      <button onClick={() => {setFilter("Grooming & Hygiene")}}>Grooming & Hygiene</button>
+      <button onClick={() => {setFilter("Healthcare")}}>Healthcare</button>
+      <button onClick={() => {setFilter("Accessories & Furniture")}}>Accessories & Furniture</button>
+      <button onClick={() => {setFilter("")}}>All Products</button>
+      <div className="productContainer">
+      {dogProducts.filter((oneProduct)=>{
+        if (oneProduct.category.includes(filter)) {
+          return true;
+        }
+      }).map((oneProduct) => {
+        return <div key={oneProduct.id} className="productCard">
           <h3>{oneProduct.name}</h3>
+          <img src={oneProduct.image} alt="product image"/>
+          <p>Price: {oneProduct.price}€</p>
         </div>
       })}
       </div>

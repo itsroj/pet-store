@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Pawradiselogo from "../images/pawradise-logo.png"
 
 
@@ -9,6 +9,7 @@ function Navbar () {
         <nav className="header">
             <div className="navbar">
                 <ul>
+                    <NavLink to="/">Homepage</NavLink>
                     <NavLink to="/pets/dogs">Dogs</NavLink>
                     <NavLink to="/pets/cats">Cats</NavLink>
                     <NavLink to="/pets/smallPets">Small Pets</NavLink>
@@ -18,7 +19,9 @@ function Navbar () {
                 </ul>
             </div>
             <div className="Logo-container">
+            <Link to="/">
                 <img src={Pawradiselogo} alt="Logo" className="logo-picture"/>
+            </Link>
                 <p>"Everything your pet needs, <br></br> all in one place."</p>
             </div>
         </nav>
