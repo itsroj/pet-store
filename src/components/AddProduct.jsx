@@ -22,13 +22,13 @@ export const AddProduct = ({allProducts, setAllProducts}) => {
       //first thing you must always do when submitting a form is stop the page from reloading
       event.preventDefault();
       const theNewProduct = {
-        name: name,
-        image: image,
-        category: category,
-        description: description,
-        price: price,
+        name,
+        image,
+        category,
+        description,
+        price,
         animal_type: animalType,
-        stock: stock,
+        stock,
       };
   
       axios
