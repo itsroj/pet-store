@@ -41,7 +41,10 @@ const FishPage = () => {
         }
       }).map((oneProduct) => {
         return <div key={oneProduct.id} className="productCard">
-          <img src={oneProduct.image} alt="product image"/>
+           <Link to ={`/pets/${oneProduct.id}`}>
+             <img src={oneProduct.image} alt="product image"/>
+          </Link>
+          
           <h4>{oneProduct.name}</h4>
           <p>Price: {oneProduct.price}€</p>
         </div>
