@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddItemForm = () => {
+const AddProduct = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const AddItemForm = () => {
   )
 }
 
-export default AddItemForm
+export default AddProduct
