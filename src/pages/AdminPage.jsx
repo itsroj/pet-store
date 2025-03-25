@@ -3,10 +3,12 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import "../components/EditProduct";
 import "../components/AddProduct";
+import { AddProduct } from '../components/AddProduct';
 
 const AdminPage = () => {
 
   const [allProducts, setAllProducts] = useState([]);
+  const [showForm, setShowForm] = useState(false);
   
    //here we need get all of the products from our server
    useEffect(() => {
@@ -38,7 +40,9 @@ const AdminPage = () => {
 
   return (
     <div>
-      <button>add product</button>
+
+      <button type="button" onClick={()=> setShowForm(!showForm)}>Add Product</button> {/* if you click the button it changes the state*/ }
+      {showForm? <AddProduct />:null}      {/* if thats true it shows the form */}
       <div className="productContainer">
         {allProducts.map((oneProduct) => {
           return (
