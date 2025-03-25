@@ -22,7 +22,11 @@ function Navbar () {
                 <Link to="/">
                     <img src={Pawradiselogo} alt="Logo" className="logoPicture"/>
                 </Link>
-                <p>"Everything<br></br>your pet needs,<br></br>all in one place."</p>
+                <div className="rotateText">
+                    <p>Everything</p>
+                    <p>your pet needs,</p>
+                    <p>all in one place.</p>
+                </div>
             </div>
         </nav>
     )

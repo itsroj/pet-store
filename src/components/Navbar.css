@@ -71,10 +71,41 @@ body, html {
     justify-content: center;
     align-items: center;
     flex: 1;
-    line-height: 1.5em;
+    line-height: 0.5em;
 }
 
 .logoPicture {
     height: 100px;
+}
+
+
+
+
+/* this one here is for the coming text quote */
+.rotateText {
+    animation: fadeInOut 6s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    16.66%, 50% {
+        opacity: 1;
+    }
+    66.66% {
+        opacity: 0;
+    }
+}
+
+.rotateText p:nth-child(1) {
+    animation-delay: 0s;
+}
     
+.rotateText p:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.rotateText p:nth-child(3) {
+    animation-delay: 4s;
 }
