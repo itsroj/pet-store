@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-export const EditProduct = () => {
+export const EditProduct = ({editId, setShowEditForm}) => {
 
     const [name, setName] = useState("");
     const [animalType, setAnimalType] = useState("");
@@ -14,12 +14,10 @@ export const EditProduct = () => {
     const [image, setImage] = useState("");
 
     //with the update, the first thing is to fetch all the data for that project
-    const { productId } = useParams();
     const nav = useNavigate();
     useEffect(() => {
-        axios.get(`http://localhost:5005/products/${productId}`)
-        .then((res) => res.json())
-        .then((data) => {
+        axios.get(`http://localhost:5005/products/${editId}`)
+        .then(({data}) => {
             console.log("here is the data for the update:", data);
             setName(data.name);
             setAnimalType(data.animal_type);
@@ -30,7 +28,7 @@ export const EditProduct = () => {
             setImage(data.image);
         })
         .catch((err) => console.log(err));
-    }, [productId]);
+    }, [editId]);
 
     async function handleUpdateProduct(event) {
         //first stop the form from refreshing the page
@@ -55,9 +53,89 @@ export const EditProduct = () => {
     }
 
   return (
-    <div>
-      
-    </div>
+    <form className="UpdateProductForm" onSubmit={handleUpdateProduct}>
+      <h3>Update New Product</h3>
+      <h6 onClick={()=>setShowEditForm(false)}>x</h6>
+      <label>
+        Product Name: 
+      <input
+        type="text"
+        placeholder="Product Name"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+      />
+      </label>
+      <label>
+        Price: 
+        <input
+            type="number"
+            placeholder="Price (€)"
+            minLength={1}
+            maxLength={7}
+            min={0.00}
+            max={100.000}
+            value={price}
+            onChange={(event) => setPrice(event.target.value)}
+        />
+     </label>      
+      <label>
+        Image: 
+      <input
+        type="text"
+        placeholder="Image URL"
+        value={image}
+        onChange={(event) => setImage(event.target.value)}
+      />
+
+      </label>
+
+      <label>
+        Animal Type: 
+        <select name="Animal type" onChange={(event) => setAnimalType(event.target.value)} required>
+            <option value="Dogs">Dogs</option>
+            <option value="Cats">Cats</option>
+            <option value="Small Pets">Small Pets</option>
+            <option value="Birds">Birds</option>
+            <option value="Fish">Fish</option>
+        </select>
+      </label>
+
+      <label>
+        Category: 
+        <select name="Category" onChange={(event) => setCategory(event.target.value)}>
+            <option value="Food & Snacks">Food & Snacks</option>
+            <option value="Grooming & Hygiene">Grooming & Hygiene</option>
+            <option value="Accessories & Furniture">Accessories & Furniture</option>
+            <option value="Toys & Enrichment">Toys & Enrichment</option>
+            <option value="Healthcare">Healthcare</option>
+        </select>
+      </label>
+
+      <label>
+        Stock: 
+        <input
+            type="number"
+            placeholder="Stock"
+            minLength={1}
+            maxLength={4}
+            min={1}
+            max={9999}
+            value={stock}
+            onChange={(event) => setStock(event.target.value)}
+        />
+     </label>
+
+      <label>
+        Description: 
+      <input
+        type="text"
+        placeholder="Description"
+        value={description}
+        onChange={(event) => setDescription(event.target.value)}
+      />
+      </label>
+      <button className = "submitButton" type="submit">Update Product</button>
+    </form>
   )
 }
 

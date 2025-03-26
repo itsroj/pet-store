@@ -10,6 +10,11 @@
   margin-top: 40px;
 }
 
+#bestellerContainer {
+  background-color: rgba(99, 86, 79, 0.786);
+  padding-bottom: 80px;
+}
+
 .categoryButtonContainer {
   display: flex;
   justify-content: space-around;
@@ -57,6 +62,10 @@ button:hover {
   border-radius: 8px;
   background-color: #d1bfac39;
   box-shadow: 0 3px 10px rgba(209, 191, 172, 0.2); */
+}
+
+#bestsellerCard {
+  background-color: rgba(173, 129, 101, 0);
 }
 
 .productCard:hover {

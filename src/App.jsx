@@ -19,6 +19,7 @@ import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Bestsellers from './components/Bestsellers';
 import Footer from "./components/Footer";
+import CartPage from "./pages/CartPage";
 
 
  
@@ -38,6 +39,7 @@ function App() {
         <Route path="/pets/:productId" element={<DetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes> 
       <Footer />

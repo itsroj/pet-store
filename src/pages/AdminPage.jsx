@@ -5,11 +5,15 @@ import "../components/EditProduct";
 import "../components/AddProduct";
 import { AddProduct } from '../components/AddProduct';
 import "./AdminPage.css"
+import { EditProduct } from '../components/EditProduct';
 
 const AdminPage = () => {
 
   const [allProducts, setAllProducts] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [showEditForm, setShowEditForm] = useState(false);
+  const [editId, setEditId] = useState(null);
+  
   
    //here we need get all of the products from our server
    useEffect(() => {
@@ -42,6 +46,7 @@ const AdminPage = () => {
   return (
     <div>
       <button type="button" className="addProductBtn" onClick={()=> setShowForm(!showForm)}>Add Product</button> {/* if you click the button it changes the state*/ }
+      {showEditForm? <EditProduct editId={editId} setShowEditForm={setShowEditForm} />:null}
       {showForm? <AddProduct allProducts = {allProducts} setAllProducts={setAllProducts} />:null}      {/* if thats true it shows the form // sending props here! bcs we want the product at the top and dont load the page again. this was added for the props: allProducts = {allProducts} setAllProducts={setAllProducts}, and then go to AdminPage  */}
       <div className="productContainer">
         {allProducts.map((oneProduct) => {
@@ -56,7 +61,7 @@ const AdminPage = () => {
               <p>Price: {oneProduct.price}€</p>
               <p>Stock: {oneProduct.stock}</p>
               <p>Description: {oneProduct.description}</p>
-              <button>Edit</button>
+              <button type="button" className="updateProductBtn" onClick={()=> {setEditId(oneProduct.id); setShowEditForm(true)}}>Edit</button>
               <button
                 onClick={() => {
                   handleDelete(oneProduct.id);
