@@ -6,6 +6,7 @@ import "./AddProduct.css"
 // insert the props from AdminPage here in () to connect files > see file AdminPage Button "Add Product" to see props. Then add them here. also add in axios .then this: setAllProducts([res.data, ...allProducts]) 
 export const AddProduct = ({allProducts, setAllProducts, setShowForm}) => {
 
+  const api_url = import.meta.env.VITE_APP_URL
     const [name, setName] = useState("");
     const [animalType, setAnimalType] = useState("");
     const [category, setCategory] = useState("");
@@ -33,7 +34,7 @@ export const AddProduct = ({allProducts, setAllProducts, setShowForm}) => {
       };
   
       axios
-        .post("http://localhost:5005/products", theNewProduct)
+        .post(`${api_url}/products`, theNewProduct)
         .then((res) => {
           console.log("a new product", res.data);
           setAllProducts([res.data, ...allProducts]) // this is putting the new product on the top of the list

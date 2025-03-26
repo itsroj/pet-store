@@ -10,7 +10,7 @@ const Bestsellers = () => {
 
   useEffect(() => {
       axios
-        .get("http://localhost:5005/products")
+        .get("${import.meta.env.VITE_APP_URL}/products")
         .then((response) => {
          const topTen = [];
          for (let i=0; i<10; i++) {

@@ -11,7 +11,7 @@ const DetailsPage = () => {
   //we destructure the key name from 'useContext'
 
   useEffect(() => {
-    fetch(`http://localhost:5005/products/${productId}`)
+    fetch(`${import.meta.env.VITE_APP_URL}/products/${productId}`)
     .then((response) => {
       return response.json();
     })

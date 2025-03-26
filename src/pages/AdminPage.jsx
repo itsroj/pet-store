@@ -18,7 +18,7 @@ const AdminPage = () => {
    //here we need get all of the products from our server
    useEffect(() => {
     axios
-      .get("http://localhost:5005/products")
+      .get(`${import.meta.env.VITE_APP_URL}/products`)
       .then((response) => {
         console.log (response.data);
         setAllProducts(response.data)
@@ -36,7 +36,7 @@ const AdminPage = () => {
       
       //second step is to send a request to the json server to delete one product
       axios
-        .delete(`http://localhost:5005/products/${productId}`)
+        .delete(`${import.meta.env.VITE_APP_URL}/products/${productId}`)
         .then((response) => {
           console.log("product deleted... nice work", response.data);
         })

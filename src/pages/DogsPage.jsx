@@ -13,7 +13,7 @@ const DogsPage = () => {
    //here we need get all of the projects from our server
    useEffect(() => {
     axios
-      .get("http://localhost:5005/products")
+      .get(`${import.meta.env.VITE_APP_URL}/products`)
       .then((res) => {
         // console.log(res.data);
         const filteredData = res.data.filter((oneProduct) => {

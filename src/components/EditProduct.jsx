@@ -16,7 +16,7 @@ export const EditProduct = ({editId, setShowEditForm}) => {
     //with the update, the first thing is to fetch all the data for that project
     const nav = useNavigate();
     useEffect(() => {
-        axios.get(`http://localhost:5005/products/${editId}`)
+        axios.get(`${import.meta.env.VITE_APP_URL}/products/${editId}`)
         .then(({data}) => {
             console.log("here is the data for the update:", data);
             setName(data.name);
@@ -44,7 +44,7 @@ export const EditProduct = ({editId, setShowEditForm}) => {
         };
         //second we make a fetch call to update the server
         axios
-            .put(`http://localhost:5005/products/${productId}`, updateProduct)
+            .put(`${import.meta.env.VITE_APP_URL}/products/${productId}`, updateProduct)
             .then((res) => {
                 console.log("successfully updated", res.data);
                 // nav("/");

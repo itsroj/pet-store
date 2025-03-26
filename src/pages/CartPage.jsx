@@ -6,7 +6,7 @@ const CartPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5005/cart")
+      .get(`${import.meta.env.VITE_APP_URL}/cart`)
       .then((response) => {
         console.log (response.data);
         setAllProducts(response.data)
@@ -23,7 +23,7 @@ const CartPage = () => {
       
     //   //second step is to send a request to the json server to delete one product
     //   axios
-    //     .post(`http://localhost:5005/cart/${productId}`)
+    //     .post(`${import.meta.env.VITE_APP_URL}/cart/${productId}`)
     //     .then((response) => {
     //       console.log("product added to cart... nice work", response.data);
     //     })
