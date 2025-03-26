@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from "axios";
 import { useState } from "react";
+import "./AddProduct.css"
 
 // insert the props from AdminPage here in () to connect files > see file AdminPage Button "Add Product" to see props. Then add them here. also add in axios .then this: setAllProducts([res.data, ...allProducts]) 
 export const AddProduct = ({allProducts, setAllProducts}) => {

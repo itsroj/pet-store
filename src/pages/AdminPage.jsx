@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../components/EditProduct";
 import "../components/AddProduct";
 import { AddProduct } from '../components/AddProduct';
+import "./AdminPage.css"
 
 const AdminPage = () => {
 
@@ -40,8 +41,7 @@ const AdminPage = () => {
 
   return (
     <div>
-
-      <button type="button" onClick={()=> setShowForm(!showForm)}>Add Product</button> {/* if you click the button it changes the state*/ }
+      <button type="button" className="addProductBtn" onClick={()=> setShowForm(!showForm)}>Add Product</button> {/* if you click the button it changes the state*/ }
       {showForm? <AddProduct allProducts = {allProducts} setAllProducts={setAllProducts} />:null}      {/* if thats true it shows the form // sending props here! bcs we want the product at the top and dont load the page again. this was added for the props: allProducts = {allProducts} setAllProducts={setAllProducts}, and then go to AdminPage  */}
       <div className="productContainer">
         {allProducts.map((oneProduct) => {

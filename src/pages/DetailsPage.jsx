@@ -24,13 +24,18 @@ const DetailsPage = () => {
 
   return (
     <div className="oneProductPage">
-      <h2>{products.name}'s Details</h2>
       <img src={products.image} alt={products.name} />
-      <p>Price: {products.price}€</p>
-      <p>Category: {products.category}</p>
-      <p>Stock: {products.stock}</p>
-      <p>Description: {products.description}</p>
-     
+      <div className="productDetails">
+        <h3>{products.name}</h3>
+        <p className="price">{products.price}€</p>
+        <p className="category">Category: {products.category}</p>
+        <p className="stock">Stock: {products.stock}</p>
+        <p>Description: {products.description}</p>
+        <div className="actionButtons">
+          <button>Add to Cart</button>
+          <button>Add to Favorites</button>
+        </div>
+      </div>
     </div>
   )
 }
