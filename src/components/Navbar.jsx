@@ -2,6 +2,8 @@ import React from "react";
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 import Pawradiselogo from "../images/pawradise-logo.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 
 function Navbar () {
@@ -16,6 +18,7 @@ function Navbar () {
                     <NavLink to="/pets/birds">Birds</NavLink>
                     <NavLink to="/pets/fish">Fish</NavLink>
                     <NavLink to="/pets/about">About Us</NavLink>
+                    <NavLink to="/cart"><FontAwesomeIcon icon={faShoppingCart} /></NavLink>
                 </ul>
             </div>
             <div className="logoContainer">

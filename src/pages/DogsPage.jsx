@@ -1,12 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import {addToCart} from "../utils/addToCart"
 import "./Pets.css";
 
 
 const DogsPage = () => {
   const [dogProducts, setDogProducts] = useState([]);
   const [filter, setFilter] = useState("");
+
+
    //here we need get all of the projects from our server
    useEffect(() => {
     axios
@@ -47,7 +50,7 @@ const DogsPage = () => {
         </Link>
           <h4>{oneProduct.name}</h4>
           <p>Price: {oneProduct.price}€</p>
-          <button>Add to Cart</button>
+          <button onClick={()=> {addToCart("item example","item id example")}}>Add to Cart</button>
         </div>)
       })}
       </div>

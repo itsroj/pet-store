@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: start;
-    min-height: 80vh; /* Use most of the viewport height */
+    min-height: auto; 
     padding: 0px 0; /* Add top and bottom padding */
 }
 
@@ -17,9 +17,11 @@ body {
     width: auto;
     max-width: 100%; /* Ensure responsiveness */
     object-fit: contain; /* Preserve aspect ratio */
-    display: flex;
-    justify-content: end;
-    align-items: end;
+    
+}
+
+.notFoundContainer {
+    padding-bottom: 300px;
 }
 
 .notFoundContainer h3 {
