@@ -2,9 +2,27 @@ body {
     background-color: blanchedalmond;
     font-family: 'Montserrat', sans-serif;
 }
-/* .montserrat-<uniquifier> {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-  } */
+
+/* Center the Not Found image on the page */
+.notFoundImgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 80vh; /* Use most of the viewport height */
+    padding: 0px 0; /* Add top and bottom padding */
+}
+
+.NotFoundImg {
+    height: 600px;
+    width: auto;
+    max-width: 100%; /* Ensure responsiveness */
+    object-fit: contain; /* Preserve aspect ratio */
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.notFoundContainer h3 {
+    font-size: 35px;
+    margin: 50px 0px;
+}

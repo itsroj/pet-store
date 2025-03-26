@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./AddProduct.css"
 
 // insert the props from AdminPage here in () to connect files > see file AdminPage Button "Add Product" to see props. Then add them here. also add in axios .then this: setAllProducts([res.data, ...allProducts]) 
-export const AddProduct = ({allProducts, setAllProducts}) => {
+export const AddProduct = ({allProducts, setAllProducts, setShowForm}) => {
 
     const [name, setName] = useState("");
     const [animalType, setAnimalType] = useState("");
@@ -53,6 +53,7 @@ export const AddProduct = ({allProducts, setAllProducts}) => {
   return (
     <form className="addProductForm" onSubmit={handleCreateProduct}>
       <h3>Add New Product</h3>
+      <h6 onClick={()=>setShowForm(false)}>x</h6>
       <label>
         Product Name: 
       <input

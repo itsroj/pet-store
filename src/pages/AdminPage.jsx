@@ -45,9 +45,9 @@ const AdminPage = () => {
 
   return (
     <div>
-      <button type="button" className="addProductBtn" onClick={()=> setShowForm(!showForm)}>Add Product</button> {/* if you click the button it changes the state*/ }
+      <button type="button" className="addProductBtn" onClick={()=> setShowForm(true)}>Add Product</button> {/* if you click the button it changes the state*/ }
       {showEditForm? <EditProduct editId={editId} setShowEditForm={setShowEditForm} />:null}
-      {showForm? <AddProduct allProducts = {allProducts} setAllProducts={setAllProducts} />:null}      {/* if thats true it shows the form // sending props here! bcs we want the product at the top and dont load the page again. this was added for the props: allProducts = {allProducts} setAllProducts={setAllProducts}, and then go to AdminPage  */}
+      {showForm? <AddProduct allProducts = {allProducts} setAllProducts={setAllProducts} setShowForm={setShowForm}/>:null}      {/* if thats true it shows the form // sending props here! bcs we want the product at the top and dont load the page again. this was added for the props: allProducts = {allProducts} setAllProducts={setAllProducts}, and then go to AdminPage  */}
       <div className="productContainer">
         {allProducts.map((oneProduct) => {
           return (
