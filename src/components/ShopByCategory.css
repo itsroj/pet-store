@@ -1,76 +1,103 @@
 .categoryPictureContainer {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 600px) {
-    .categoryPictureContainer {
-        gap: 50px; /* Gap for screens wider than 600px */
-    }
+  .categoryPictureContainer {
+    gap: 50px; /* Gap for screens wider than 600px */
+  }
 }
 
 @media (min-width: 1400px) {
-    .categoryPictureContainer {
-        gap: 80px; /* Gap for screens wider than 600px */
-    }
+  .categoryPictureContainer {
+    gap: 80px; /* Gap for screens wider than 600px */
+  }
 }
 
 @media (min-width: 1600px) {
-    .categoryPictureContainer {
-        gap: 100px; /* Gap for screens wider than 900px */
-    }
+  .categoryPictureContainer {
+    gap: 100px; /* Gap for screens wider than 900px */
+  }
 }
 
 .categoryPictureContainer img {
-    height: 200px;
-    width: 100%; /* Ensure the image takes the full width of the container */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
+  height: 200px;
+  width: 100%; /* Ensure the image takes the full width of the container */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
 }
 
 .categoryPictureContainer p {
-    background-color: #d1bfac5c; 
-    padding: 10px 0;
-    text-align: center;
-    font-weight: 300;
-    font-size: 16px;
-    margin: 0; /* Remove default margin */
+  background-color: #d1bfac5c;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  margin: 0; /* Remove default margin */
 }
 
 .petCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center; 
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #d1bfac5c; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #d1bfac5c;
+  transition: all 0.3s ease; /* Add transition effect */
+  border-radius: 10px; /* Rounded corners for a more modern look */
 }
 
 .petCard a {
-    text-decoration: none; /* removes the underline from the link */
+  text-decoration: none; /* removes the underline from the link */
 }
 
 .petCardCategoryName {
-    color:  rgb(32, 32, 32);
-    text-decoration: none;
-    font-weight: 200;
-    letter-spacing: 1px;
+  color: rgb(32, 32, 32);
+  text-decoration: none;
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
 }
 
-.petCard :hover {
-    text-shadow: 0 0 5px rgb(32, 32, 32, 0.4); /* first two numbers (vertical and horizontal offset): If you were to change those values (e.g., 2px 2px), the shadow would appear below and to the right of the text */
-    box-shadow: 0 0 2px rgb(32, 32, 32, 0.4);
+.petCard:hover {
+  text-shadow: 0 0 5px rgb(32, 32, 32, 0.4); /* Add text shadow effect on hover */
+  box-shadow: 0 0 10px rgba(32, 32, 32, 0.2); /* Slightly stronger box-shadow */
+  transform: scale(1.05); /* Slightly scale the card on hover */
 }
 
+/* Active category link style */
+.active-category {
+  color: #fff !important;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 235, 205, 0.9); /* Soft glow effect */
+  background: linear-gradient(
+    135deg,
+    rgba(190, 155, 40, 0.8),
+    rgba(167, 138, 105, 0.8)
+  );
+  padding: 10px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+/* Add hover effect on category names */
+.petCardCategoryName:hover {
+  color: #fff; /* Change text color on hover */
+  text-shadow: 0 0 10px rgba(255, 235, 205, 0.8); /* Soft glowing text on hover */
+}
+
+/* Header style */
 h3 {
-    font-weight: 300; 
-    font-size: 24px; 
-    letter-spacing: 2px; 
-    color: #202020; 
-    text-transform: uppercase;
-    text-align: center;
-    padding-top: 20px;
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #202020;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 20px;
 }

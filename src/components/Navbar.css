@@ -1,111 +1,122 @@
-/* Reset margins and padding for the entire page */
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .header {
-    background-image: url("../images/header-picture.png"); 
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  background-image: url("../images/header-picture.png");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .navbar {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    position: relative; 
-    padding: 30px 40px;   /* changes the position of the navbar > navlink */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 30px 40px; /* changes the position of the navbar > navlink */
 }
 
 .navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    right: 40px;   /* this one puts the navbar to the right corner */
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 40px; /* this one puts the navbar to the right corner */
 }
 
 /* this changes the font from the navbar links */
-.navbar a,
-.navbar NavLink {
-    color: blanchedalmond;
-    text-decoration: none; /* deletes the underline > from the link */
-    font-weight: 300;
-    /* text-transform: uppercase; */
-    letter-spacing: 1px;
-    /* transition: all 0.3s ease; */
+.navbar a {
+  color: blanchedalmond;
+  text-decoration: none; /* deletes the underline > from the link */
+  font-weight: 300;
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+  /* transition: all 0.3s ease; */
 }
 
 .navbar a:hover,
 .navbar NavLink:hover {
-    color: blanchedalmond;
-    text-shadow: 0 0 5px rgba(255, 235, 205, 0.8); /* first two numbers (vertical and horizontal offset): If you were to change those values (e.g., 2px 2px), the shadow would appear below and to the right of the text */
+  color: blanchedalmond;
+  text-shadow: 0 0 5px rgba(255, 235, 205, 0.8); /* first two numbers (vertical and horizontal offset): If you were to change those values (e.g., 2px 2px), the shadow would appear below and to the right of the text */
 }
 
 .logoContainer {
-    position: absolute;
-    top: 42%;
-    left: 58%; /* this positions it slightly to the right of center */
-    transform: translate(-50%, -50%); /* this centers the container itself */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    line-height: 0.5em;
+  position: absolute;
+  top: 42%;
+  left: 58%; /* this positions it slightly to the right of center */
+  transform: translate(-50%, -50%); /* this centers the container itself */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  line-height: 0.5em;
 }
 
 .logoPicture {
-    height: 100px;
+  height: 100px;
 }
-
-
-
 
 /* this one here is for the coming text quote */
 .rotateText {
-    animation: fadeInOut 6s infinite;
+  animation: fadeInOut 6s infinite;
 }
 
 @keyframes fadeInOut {
-    0%, 100% {
-        opacity: 0;
-    }
-    16.66%, 50% {
-        opacity: 1;
-    }
-    66.66% {
-        opacity: 0;
-    }
+  0%,
+  100% {
+    opacity: 0;
+  }
+  16.66%,
+  50% {
+    opacity: 1;
+  }
+  66.66% {
+    opacity: 0;
+  }
 }
 
 .rotateText p:nth-child(1) {
-    animation-delay: 0s;
+  animation-delay: 0s;
 }
-    
+
 .rotateText p:nth-child(2) {
-    animation-delay: 2s;
+  animation-delay: 2s;
 }
 
 .rotateText p:nth-child(3) {
-    animation-delay: 4s;
+  animation-delay: 4s;
+}
+
+.active-link {
+  color: #fff !important;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 235, 205, 0.9); /* Мягкое свечение */
+  background: linear-gradient(
+    135deg,
+    rgba(190, 155, 40, 0.8),
+    rgba(167, 138, 105, 0.8)
+  );
+  padding: 8px 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.active-link:hover {
+  box-shadow: 0px 0px 15px rgba(233, 186, 133, 0.9);
+  transform: scale(1.1);
 }

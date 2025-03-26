@@ -1,90 +1,90 @@
 .oneProductPage {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 40px auto;
-    padding: 30px;
-    max-width: 1200px;
-    background-color: #d1bfac55;
-    border-radius: 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    gap: 40px; /* gap between left img container and right text container */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 1200px;
+  background-color: #d1bfac55;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  gap: 40px; /* gap between left img container and right text container */
 }
 
 .oneProductPage img {
-    height: 500px;
-    width: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* shadow for the image */
-    margin-bottom: 50px;
+  height: 500px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* shadow for the image */
+  margin-bottom: 50px;
 }
 
 .productDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 10px;
-    max-width: 600px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  max-width: 600px;
+  text-align: center;
 }
 
 .productDetails h3 {
-    font-size: 36px;
-    font-weight: 400;
-    color: #333333;
-    margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 10px;
 }
 
 .productDetails p {
-    font-size: 18px;
-    color: #555555;
-    line-height: 1.4;
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.4;
 }
 
 .productDetails .price {
-    font-size: 28px;
-    color: #a3917f;
-    margin: 0; 
+  font-size: 28px;
+  color: #a3917f;
+  margin: 0;
 }
 
 .productDetails .category {
-    font-size: 16px;
-    font-weight: 500;
-    color: #666666;
-    /* text-transform: uppercase; */
-    letter-spacing: 1px;
-    margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666666;
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+  margin: 0;
 }
 
 .productDetails .stock {
-    font-size: 16px;
-    color: #888888;
-    margin: 0px 0px 5px 0px;
+  font-size: 16px;
+  color: #888888;
+  margin: 0px 0px 5px 0px;
 }
 
 .actionButtons {
-    display: flex;
-    /* justify-content: space-around; */
-    gap: 20px;
-    margin-top: 25px;
+  display: flex;
+  /* justify-content: space-around; */
+  gap: 20px;
+  margin-top: 25px;
 }
 
 .actionButtons button {
-    background-color: #a3917f;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #a3917f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .actionButtons button:hover {
-    background-color: #a3917f7b;
-    transform: translateY(-3px);
+  background-color: #a3917f7b;
+  transform: translateY(-3px);
 }

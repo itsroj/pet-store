@@ -75,10 +75,6 @@
   padding-right: 30px;
 }
 
-/* .addProductForm .inputGroup {
-  margin-bottom: 20px;
-} */
-
 .addProductForm .submitButton {
   background-color: #a3917f;
   color: white;
@@ -99,4 +95,3 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-

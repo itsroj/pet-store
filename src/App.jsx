@@ -1,12 +1,7 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';  
 import Navbar from './components/Navbar';
-import "./App.css"
+import "./App.css";
 import ShopByCategory from './components/ShopByCategory';
-// import AddItemForm from './components/AddItemForm';
-// import Footer from './components/Footer';
-// import Sidebar from './components/Sidebar';
-// import UpdateForm from './components/UpdateForm';
 import HomepagePage from "./pages/HomepagePage";
 import DogsPage from "./pages/DogsPage";
 import CatsPage from "./pages/CatsPage";
@@ -17,18 +12,14 @@ import DetailsPage from "./pages/DetailsPage";
 import AboutPage from "./pages/AboutPage";
 import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import Bestsellers from './components/Bestsellers';
-import Footer from "./components/Footer";
 import CartPage from "./pages/CartPage";
+import Footer from "./components/Footer";
 
-
- 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className = "App">
-      <Navbar /> 
+    <div className="App">
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomepagePage />} />
         <Route path="/pets/dogs" element={<DogsPage />} />
@@ -41,10 +32,10 @@ function App() {
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="*" element={<NotFoundPage />} />
-      </Routes> 
+      </Routes>
       <Footer />
-     </div>
-  )
-};
+    </div>
+  );
+}
 
 export default App;

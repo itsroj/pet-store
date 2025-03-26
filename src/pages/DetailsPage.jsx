@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./DetailsPage.css"
+import "./DetailsPage.css";
 
 const DetailsPage = () => {
-
   const [products, setProducts] = useState({});
   const { productId } = useParams();
 
@@ -12,14 +11,13 @@ const DetailsPage = () => {
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_APP_URL}/products/${productId}`)
-    .then((response) => {
-      return response.json();
-    })
-  .then((data)=> {
-    setProducts(data);
-  })
-  .catch((error) => console.log(error));
-
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((error) => console.log(error));
   }, [productId]);
 
   return (
@@ -37,7 +35,7 @@ const DetailsPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DetailsPage
+export default DetailsPage;
