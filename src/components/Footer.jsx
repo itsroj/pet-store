@@ -13,13 +13,14 @@ const Footer = () => {
       </div>
       <div>
         <p>
-          Contact <br></br> Phone: 677 346 028 <br></br> E-Mail:
-          contact@pawradise.com
+          Contact: <br></br> Phone: 677 346 028 <br></br> E-Mail: <a href="mailto:contact@pawradise.com">contact@pawradise.com</a>
         </p>
       </div>
       <div>
         <p>
-          About Us <br></br>Legal Notice<br></br>Privacy Policy
+        <NavLink to="/about">About Us</NavLink> <br />
+        <NavLink to="/legal">Legal Notice</NavLink> <br />
+        <NavLink to="/privacy">Privacy Policy</NavLink>
         </p>
       </div>
     </div>

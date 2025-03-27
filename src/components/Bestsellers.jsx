@@ -28,7 +28,7 @@ const Bestsellers = () => {
   const notify = () => toast.success("Added to Cart");
 
   return (
-    <div id="bestellerContainer">
+    <div className="bestsellerContainer">
       <h3>shop our bestsellers</h3>
       <div className="productContainer">
         {bestsellers.map((oneProduct) => {
