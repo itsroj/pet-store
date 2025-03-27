@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Bestsellers.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { addToCart } from "../utils/addToCart";
 
 const Bestsellers = () => {
   const [bestsellers, setBestsellers] = useState([]);
@@ -39,7 +40,7 @@ const Bestsellers = () => {
               </Link>
               <h4>{oneProduct.name}</h4>
               <p>Price: {oneProduct.price}€</p>
-              <button>Add to Cart</button>
+              <button onClick={()=>addToCart(oneProduct)} >Add to Cart</button>
             </div>
           );
         })}

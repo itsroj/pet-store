@@ -86,13 +86,7 @@ const DogsPage = () => {
                 </Link>
                 <h4>{oneProduct.name}</h4>
                 <p>Price: {oneProduct.price}€</p>
-                <button
-                  onClick={() => {
-                    addToCart("item example", "item id example");
-                  }}
-                >
-                  Add to Cart
-                </button>
+                <button onClick={()=>addToCart(oneProduct)}>Add to Cart</button>
               </div>
             );
           })}

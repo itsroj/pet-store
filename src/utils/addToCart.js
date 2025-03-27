@@ -1,17 +1,13 @@
+import axios from "axios";
 
 
-
-export const addToCart = (allProducts,itemId) => {
-
-console.log("item :",item);
-console.log("itemId:",itemId)
+export const addToCart = (product) => {
  
-   
    
     
     //second step is to send a request to the json server to delete one product
     axios
-      .post(`${import.meta.env.VITE_APP_URL}/cart/${productId}`)
+      .post(`${import.meta.env.VITE_APP_URL}/cart/`, product)
       .then((response) => {
         console.log("product added to cart... nice work", response.data);
       })

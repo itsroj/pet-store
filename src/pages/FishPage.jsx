@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Pets.css";
+import { addToCart } from "../utils/addToCart";
 
 const FishPage = () => {
   const [fishProducts, setFishProducts] = useState([]);
@@ -85,6 +86,7 @@ const FishPage = () => {
 
                 <h4>{oneProduct.name}</h4>
                 <p>Price: {oneProduct.price}€</p>
+                <button onClick={()=>addToCart(oneProduct)}>Add to Cart</button>
               </div>
             );
           })}
