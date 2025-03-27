@@ -2,34 +2,52 @@
   display: flex;
   justify-content: space-between;
   padding: 30px;
-  background-color: rgba(167, 138, 105, 0.8)
-  color: #333333; 
-  border-top: 1px solid #c2bab2; 
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.05); 
-  margin-top: 40px; 
+  background-color: rgba(167, 138, 105, 0.8);
+  color: #333333;
+  border-top: 1px solid #c2bab2;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
 }
 
 .footerContainer div {
-  max-width: 300px; 
+  max-width: 300px;
 }
 
 .footerContainer p {
   font-size: 14px;
   color: #555555;
   line-height: 1.6;
+  margin: 0;
 }
 
 .footerContainer p a {
-  color: #666666; 
+  color: #666666;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .footerContainer p a:hover {
-  color: #a3917f; 
+  color: #a3917f;
   text-decoration: underline;
 }
 
 .footerContainer div p {
-  margin: 0; 
+  margin: 0;
+}
+
+.footerContainer p {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+}
+
+.footerContainer a {
+  color: #666666;
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.footerContainer a:hover {
+  color: #a3917f;
+  text-decoration: underline;
 }

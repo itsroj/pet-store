@@ -153,12 +153,6 @@ h3:after {
     font-weight: 600;
 }
 
-/* Add a paw print accent */
-.aboutUsContainer p:last-of-type::after {
-    content: " 🐾";
-    font-size: 20px;
-}
-
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .aboutUsContainer {

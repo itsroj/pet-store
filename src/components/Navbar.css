@@ -105,10 +105,10 @@ html {
 .active-link {
   color: #fff !important;
   font-weight: bold;
-  text-shadow: 0 0 10px rgba(255, 235, 205, 0.9); /* Мягкое свечение */
+  text-shadow: 0 0 10px rgba(255, 235, 205, 0.9);
   background: linear-gradient(
     135deg,
-    rgba(190, 155, 40, 0.8),
+    rgba(209, 191, 172, 0.6),
     rgba(167, 138, 105, 0.8)
   );
   padding: 8px 15px;
@@ -117,6 +117,6 @@ html {
 }
 
 .active-link:hover {
-  box-shadow: 0px 0px 15px rgba(233, 186, 133, 0.9);
+  box-shadow: 0px 0px 15px rgba(209, 191, 172, 0.6);
   transform: scale(1.1);
 }
