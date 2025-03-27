@@ -14,7 +14,7 @@ const ShopByCategory = () => {
       <div className="categoryPictureContainer">
         <div className="petCard">
           <NavLink
-            to="/pets/dogs"
+            to="/pets/dogs" end
             className={({ isActive }) => (isActive ? "active-category" : "")}
           >
             <img src={DogPicture} alt="Dog Picture" />
