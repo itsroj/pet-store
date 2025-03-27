@@ -61,7 +61,7 @@ export const EditProduct = ({ editId, setShowEditForm }) => {
   return (
     <form className="addProductForm" onSubmit={handleUpdateProduct}>
       <h3>Update New Product</h3>
-      <h6 onClick={() => setShowEditForm(false)}>x</h6>
+      <h6 className="closeButton" onClick={() => setShowEditForm(false)}>x</h6>
       <label>
         Product Name:
         <input

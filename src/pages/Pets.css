@@ -7,7 +7,11 @@
   flex-wrap: wrap; /* allow items to wrap to the next line */
   gap: 20px; /* add space between items */
   justify-content: center; /* center items horizontally */
-  margin-top: 40px;
+  margin: 40px auto; /* change from margin-top only to center horizontally */
+  max-width: 2000px; /* limit maximum width */
+  width: 100%; /* ensure it takes full width on smaller screens */
+  box-sizing: border-box; /* include padding in width calculation */
+  padding: 0 20px; /* add some padding on smaller screens */
 }
 
 #bestellerContainer {
@@ -143,8 +147,40 @@ button:hover {
   text-overflow: ellipsis; */
 }
 
+/* Close button styling */
+.addProductForm .closeButton {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  border: 1px solid rgba(209, 191, 172, 0.4);
+  color: #666;
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
 
+.addProductForm .closeButton:hover {
+  background-color: #a3917f;
+  color: white;
+  transform: rotate(90deg);
+  border-color: transparent;
+}
 
+/* Make the form position relative for absolute positioning of the close button */
+.addProductForm {
+  position: relative;
+  /* your existing styles */
+}
 
 /* toast css */
 .rainbow-progress-bar .Toastify__progress-bar {

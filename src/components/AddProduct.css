@@ -7,6 +7,7 @@
   margin: 30px auto;
   transition: all 0.3s ease;
   border: 1px solid rgba(209, 191, 172, 0.2);
+  position: relative;
 }
 
 .addProductForm h3 {
@@ -94,4 +95,33 @@
   background-color: #8c7b69;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Close button styling */
+.addProductForm .closeButton {
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  border: 1px solid rgba(209, 191, 172, 0.4);
+  color: #666;
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.addProductForm .closeButton:hover {
+  background-color: #a3917f;
+  color: white;
+  transform: rotate(90deg);
+  border-color: transparent;
 }

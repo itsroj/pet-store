@@ -55,7 +55,7 @@ export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
   return (
     <form className="addProductForm" onSubmit={handleCreateProduct}>
       <h3>Add New Product</h3>
-      <h6 onClick={() => setShowForm(false)}>x</h6>
+      <h6 className="closeButton" onClick={() => setShowForm(false)}>x</h6>
       <label>
         Product Name:
         <input
