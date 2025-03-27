@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import "./CartPage.css";
+import { ToastContainer, toast } from 'react-toastify';
+import emptyCart from "../images/emptyCart.png"
 
 
 const CartPage = () => {
@@ -70,13 +72,44 @@ const CartPage = () => {
   );
 
   const notify = () => toast("Added to Cart");
+  const notifyBuy = () => toast.success("You bought some awesome Products!");
+
+  // new function to empty the cart after buying
+  function handleCheckout() {
+    // show toast message
+    notifyBuy();
+    
+    // delete all products from backend
+    allProducts.forEach(product => {
+      axios
+        .delete(`${import.meta.env.VITE_APP_URL}/cart/${product.id}`)
+        .then(response => {
+          console.log(`Removed product ${product.id} from cart`);
+        })
+        .catch(error => console.log(error));
+    });
+    
+    // empty local state to show the empty cart
+    setAllProducts([]);
+  }
 
   return (
     <div className="cartContainer">
       <h2>Your Cart</h2>
       
       {allProducts.length === 0 ? (
-        <p>Your cart is empty. <Link to="/">Continue shopping!</Link></p>
+        <div className="emptyCartContainer">
+          <div className="emptyCartContent">
+            <img 
+              src= {emptyCart}
+              alt="Empty cart" 
+              className="emptyCartImage" 
+            />
+            <h3>Your cart is empty</h3>
+            <p>Looks like you haven't added any items to your cart yet.</p>
+            <Link to="/" className="continueShopping">Continue Shopping</Link>
+          </div>
+        </div>
       ) : (
         <>
           <div className="cartItems">
@@ -130,10 +163,15 @@ const CartPage = () => {
               <span>Total:</span>
               <span>{cartTotal.toFixed(2)}€</span>
             </div>
-            <button className="checkoutBtn">Proceed to Checkout</button>
+            <button className="checkoutBtn" onClick={handleCheckout}>Buy</button>
           </div>
         </>
       )}
+      <ToastContainer 
+              theme="light"
+              toastStyle={{ background: 'rgba(53, 35, 14, 0.94)', color: '#fff' }}
+              className="rainbow-progress-bar"
+            />
     </div>
   );
 };

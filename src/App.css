@@ -1,22 +1,54 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* make the main content grow to push footer down */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto; /* this pushes the footer to the bottom */
+}
+
 body {
     background-color: blanchedalmond;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Center the Not Found image on the page */
+/* center the Not Found image on the page */
 .notFoundImgContainer {
     display: flex;
     justify-content: center;
     align-items: start;
     min-height: auto; 
-    padding: 0px 0; /* Add top and bottom padding */
+    padding: 0px 0; /* add top and bottom padding */
 }
 
 .NotFoundImg {
     height: 600px;
     width: auto;
-    max-width: 100%; /* Ensure responsiveness */
-    object-fit: contain; /* Preserve aspect ratio */
+    max-width: 100%; /* ensure responsiveness */
+    object-fit: contain; /* preserve aspect ratio */
     
 }
 

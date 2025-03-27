@@ -21,19 +21,25 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomepagePage />} />
-        <Route path="/pets/dogs" element={<DogsPage />} />
-        <Route path="/pets/cats" element={<CatsPage />} />
-        <Route path="/pets/smallPets" element={<SmallPetsPage />} />
-        <Route path="/pets/birds" element={<BirdsPage />} />
-        <Route path="/pets/fish" element={<FishPage />} />
-        <Route path="/pets/:productId" element={<DetailsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/admin" element={<AdminPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <div className="content-wrapper">
+        <Routes>
+          <Route path="/" element={<HomepagePage />} />
+          <Route path="/pets/dogs" element={<DogsPage />} />
+          <Route path="/pets/cats" element={<CatsPage />} />
+          <Route path="/pets/smallPets" element={<SmallPetsPage />} />
+          <Route path="/pets/birds" element={<BirdsPage />} />
+          <Route path="/pets/fish" element={<FishPage />} />
+          <Route path="/pets/:productId" element={<DetailsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          {/* <Route
+            path="/update/:projectId"
+            element={<UpdateProjectPage name="ragnar" />}
+          /> */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
