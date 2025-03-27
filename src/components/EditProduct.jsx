@@ -59,7 +59,7 @@ export const EditProduct = ({ editId, setShowEditForm }) => {
   const notifyUpdate = () => toast.success("Product Updated");
 
   return (
-    <form className="UpdateProductForm" onSubmit={handleUpdateProduct}>
+    <form className="addProductForm" onSubmit={handleUpdateProduct}>
       <h3>Update New Product</h3>
       <h6 onClick={() => setShowEditForm(false)}>x</h6>
       <label>

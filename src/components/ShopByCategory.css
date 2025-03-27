@@ -39,6 +39,7 @@
   margin: 0; /* Remove default margin */
 }
 
+/* More consistent cross-browser image sizing */
 .petCard {
   display: flex;
   flex-direction: column;
@@ -48,6 +49,19 @@
   background-color: #d1bfac5c;
   transition: all 0.3s ease; /* Add transition effect */
   border-radius: 10px; /* Rounded corners for a more modern look */
+  width: 200px; /* Set explicit width */
+  overflow: hidden; /* Ensure images don't overflow container */
+}
+
+.petCard img {
+  height: 200px;
+  width: 200px; /* Set explicit width instead of 100% */
+  object-fit: cover;
+  -webkit-object-fit: cover; /* Safari support */
+  object-position: center;
+  -webkit-object-position: center;
+  display: block; /* Remove extra space below image */
+  aspect-ratio: 1 / 1; /* Force square aspect ratio */
 }
 
 .petCard a {
