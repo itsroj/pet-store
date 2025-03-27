@@ -4,6 +4,8 @@
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  margin: 30px auto;
+  max-width: 1200px;
 }
 
 @media (min-width: 600px) {
@@ -51,11 +53,13 @@
   border-radius: 10px; /* Rounded corners for a more modern look */
   width: 200px; /* Set explicit width */
   overflow: hidden; /* Ensure images don't overflow container */
+  height: auto;
+  position: relative;
 }
 
 .petCard img {
   height: 200px;
-  width: 200px; /* Set explicit width instead of 100% */
+  width: 100%; /* Set explicit width instead of 100% */
   object-fit: cover;
   -webkit-object-fit: cover; /* Safari support */
   object-position: center;
