@@ -4,6 +4,7 @@ import "./Bestsellers.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { addToCart } from "../utils/addToCart";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Bestsellers = () => {
   const [bestsellers, setBestsellers] = useState([]);
@@ -24,6 +25,8 @@ const Bestsellers = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const notify = () => toast.success("Added to Cart");
+
   return (
     <div id="bestellerContainer">
       <h3>shop our bestsellers</h3>
@@ -40,11 +43,18 @@ const Bestsellers = () => {
               </Link>
               <h4>{oneProduct.name}</h4>
               <p>Price: {oneProduct.price}€</p>
-              <button onClick={()=>addToCart(oneProduct)} >Add to Cart</button>
+              <button onClick={()=>{
+                notify();
+                addToCart(oneProduct)}}>Add to Cart</button>
             </div>
           );
         })}
       </div>
+      <ToastContainer 
+        theme="light"
+        toastStyle={{ background: 'rgba(53, 35, 14, 0.94)', color: '#fff' }}
+        className="rainbow-progress-bar"
+      />
     </div>
   );
 };

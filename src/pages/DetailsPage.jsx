@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./DetailsPage.css";
+import { ToastContainer, toast } from 'react-toastify';
+import { addToCart } from "../utils/addToCart";
 
 const DetailsPage = () => {
   const [products, setProducts] = useState({});
@@ -20,6 +22,8 @@ const DetailsPage = () => {
       .catch((error) => console.log(error));
   }, [productId]);
 
+  const notify = () => toast.success("Added to Cart");
+
   return (
     <div className="oneProductPage">
       <img src={products.image} alt={products.name} />
@@ -30,10 +34,17 @@ const DetailsPage = () => {
         <p className="stock">Stock: {products.stock}</p>
         <p>Description: {products.description}</p>
         <div className="actionButtons">
-          <button>Add to Cart</button>
-          <button>Add to Favorites</button>
+          <button onClick={()=>{
+                          notify();
+                          addToCart(products)}}>Add to Cart</button>
+          {/* <button>Add to Favorites</button> */}
         </div>
       </div>
+      <ToastContainer 
+              theme="light"
+              toastStyle={{ background: 'rgba(53, 35, 14, 0.94)', color: '#fff' }}
+              className="rainbow-progress-bar"
+            />
     </div>
   );
 };

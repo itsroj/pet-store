@@ -6,6 +6,8 @@ import "../components/AddProduct";
 import { AddProduct } from "../components/AddProduct";
 import "./AdminPage.css";
 import { EditProduct } from "../components/EditProduct";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const AdminPage = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -40,6 +42,8 @@ const AdminPage = () => {
       })
       .catch((error) => console.log(error));
   }
+
+  const notifyDelete = () => toast.success("Product Deleted");
 
   return (
     <div>
@@ -87,6 +91,7 @@ const AdminPage = () => {
               </button>
               <button
                 onClick={() => {
+                  notifyDelete();
                   handleDelete(oneProduct.id);
                 }}
               >
@@ -96,6 +101,11 @@ const AdminPage = () => {
           );
         })}
       </div>
+      <ToastContainer 
+              theme="light"
+              toastStyle={{ background: 'rgba(53, 35, 14, 0.94)', color: '#fff' }}
+              className="rainbow-progress-bar"
+            />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import "./AddProduct.css";
+import { ToastContainer, toast } from 'react-toastify';
 
 // insert the props from AdminPage here in () to connect files > see file AdminPage Button "Add Product" to see props. Then add them here. also add in axios .then this: setAllProducts([res.data, ...allProducts])
 export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
@@ -48,6 +49,9 @@ export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
         setStock("");
       });
   }
+
+    const notifyAdd = () => toast.success("Product Created");
+
   return (
     <form className="addProductForm" onSubmit={handleCreateProduct}>
       <h3>Add New Product</h3>
@@ -144,9 +148,15 @@ export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
         />
       </label>
 
-      <button className="submitButton" type="submit">
+      <button className="submitButton" type="submit" onClick={()=>{
+                      notifyAdd();}}>
         Add Product
       </button>
+        <ToastContainer 
+                theme="light"
+                toastStyle={{ background: 'rgba(53, 35, 14, 0.94)', color: '#fff' }}
+                className="rainbow-progress-bar"
+              />
     </form>
   );
 };

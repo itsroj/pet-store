@@ -15,6 +15,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CartPage from "./pages/CartPage";
 import Footer from "./components/Footer";
 
+
 function App() {
 
   return (

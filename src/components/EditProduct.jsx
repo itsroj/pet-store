@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 //import { useNavigate, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const EditProduct = ({ editId, setShowEditForm }) => {
   const [name, setName] = useState("");
@@ -54,6 +55,8 @@ export const EditProduct = ({ editId, setShowEditForm }) => {
       })
       .catch((err) => console.log(err));
   }
+
+  const notifyUpdate = () => toast.success("Product Updated");
 
   return (
     <form className="UpdateProductForm" onSubmit={handleUpdateProduct}>
@@ -145,9 +148,15 @@ export const EditProduct = ({ editId, setShowEditForm }) => {
           onChange={(event) => setDescription(event.target.value)}
         />
       </label>
-      <button className="submitButton" type="submit">
+      <button className="submitButton" type="submit" onClick={()=>{
+                      notifyUpdate(); }}>
         Update Product
       </button>
+      <ToastContainer 
+              theme="light"
+              toastStyle={{ background: 'rgba(53, 35, 14, 0.94)', color: '#fff' }}
+              className="rainbow-progress-bar"
+            />
     </form>
   );
 };

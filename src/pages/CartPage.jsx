@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import "./CartPage.css";
 
+
 const CartPage = () => {
   const [allProducts, setAllProducts] = useState([]);
 
@@ -68,12 +69,14 @@ const CartPage = () => {
     0
   );
 
+  const notify = () => toast("Added to Cart");
+
   return (
     <div className="cartContainer">
       <h2>Your Cart</h2>
       
       {allProducts.length === 0 ? (
-        <p>Your cart is empty. Continue shopping!</p>
+        <p>Your cart is empty. <Link to="/">Continue shopping!</Link></p>
       ) : (
         <>
           <div className="cartItems">

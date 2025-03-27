@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Pets.css";
 import { addToCart } from "../utils/addToCart";
+import { ToastContainer, toast } from 'react-toastify';
 
 const SmallPetsPage = () => {
   const [smallPetProducts, setSmallPetProducts] = useState([]);
@@ -22,6 +23,8 @@ const SmallPetsPage = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const notify = () => toast.success("Added to Cart");
 
   return (
     <div>
@@ -85,11 +88,18 @@ const SmallPetsPage = () => {
                 </Link>
                 <h4>{oneProduct.name}</h4>
                 <p>Price: {oneProduct.price}€</p>
-                <button onClick={()=>addToCart(oneProduct)}>Add to Cart</button>
+                <button onClick={()=>{
+                                notify();
+                                addToCart(oneProduct)}}>Add to Cart</button>
               </div>
             );
           })}
       </div>
+      <ToastContainer 
+              theme="light"
+              toastStyle={{ background: 'rgba(53, 35, 14, 0.94)', color: '#fff' }}
+              className="rainbow-progress-bar"
+            />
     </div>
   );
 };
