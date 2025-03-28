@@ -58,12 +58,11 @@
 }
 
 .petCard img {
-  height: 200px;
-  width: 100%; /* Set explicit width instead of 100% */
+  height: 250px;
   object-fit: cover;
   -webkit-object-fit: cover; /* Safari support */
-  object-position: center;
-  -webkit-object-position: center;
+  object-position: top;
+  -webkit-object-position: top;
   display: block; /* Remove extra space below image */
   aspect-ratio: 1 / 1; /* Force square aspect ratio */
 }

@@ -2,16 +2,17 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 //import { useNavigate, useParams } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 
-export const EditProduct = ({ editId, setShowEditForm }) => {
+export const EditProduct = ({ editId, setShowEditForm, onUpdateSuccess }) => {
   const [name, setName] = useState("");
-  const [animalType, setAnimalType] = useState("");
-  const [category, setCategory] = useState("");
+  const [animalType, setAnimalType] = useState("Dogs");
+  const [category, setCategory] = useState("Food & Snacks");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [stock, setStock] = useState("");
   const [image, setImage] = useState("");
+  // const notifyUpdate = () => toast.success("Product Updated");
 
   //with the update, the first thing is to fetch all the data for that project
   //const nav = useNavigate();
@@ -45,18 +46,22 @@ export const EditProduct = ({ editId, setShowEditForm }) => {
     };
     //second we make a fetch call to update the server
     axios
-      .put(
+      .patch(
         `${import.meta.env.VITE_APP_URL}/products/${editId}`,
         updateProduct
       )
       .then((res) => {
-        console.log("successfully updated", res.data);
-        // nav("/");
+        console.log("successfully updated", res.data, updateProduct);
+        
+        // inform parent here:
+        onUpdateSuccess(res.data);
+        // notifyUpdate();
+        setShowEditForm(false);
       })
       .catch((err) => console.log(err));
   }
 
-  const notifyUpdate = () => toast.success("Product Updated");
+
 
   return (
     <form className="addProductForm" onSubmit={handleUpdateProduct}>
@@ -78,8 +83,9 @@ export const EditProduct = ({ editId, setShowEditForm }) => {
           placeholder="Price (€)"
           minLength={1}
           maxLength={7}
-          min={0.0}
-          max={100.0}
+          min={0.00}
+          max={100.00}
+          step="0.01"
           value={price}
           onChange={(event) => setPrice(event.target.value)}
         />
@@ -101,11 +107,12 @@ export const EditProduct = ({ editId, setShowEditForm }) => {
           onChange={(event) => setAnimalType(event.target.value)}
           required
         >
-          <option value="Dogs">Dogs</option>
-          <option value="Cats">Cats</option>
-          <option value="Small Pets">Small Pets</option>
-          <option value="Birds">Birds</option>
-          <option value="Fish">Fish</option>
+          <option value="">none</option>
+          <option value="dogs">Dogs</option>
+          <option value="cats">Cats</option>
+          <option value="small pets">Small Pets</option>
+          <option value="birds">Birds</option>
+          <option value="fish">Fish</option>
         </select>
       </label>
 
@@ -115,6 +122,7 @@ export const EditProduct = ({ editId, setShowEditForm }) => {
           name="Category"
           onChange={(event) => setCategory(event.target.value)}
         >
+          <option value="">none</option>
           <option value="Food & Snacks">Food & Snacks</option>
           <option value="Grooming & Hygiene">Grooming & Hygiene</option>
           <option value="Accessories & Furniture">
@@ -149,14 +157,14 @@ export const EditProduct = ({ editId, setShowEditForm }) => {
         />
       </label>
       <button className="submitButton" type="submit" onClick={()=>{
-                      notifyUpdate(); }}>
+                       }}>
         Update Product
       </button>
-      <ToastContainer 
+      {/* <ToastContainer 
               theme="light"
               toastStyle={{ background: 'rgba(53, 35, 14, 0.94)', color: '#fff' }}
               className="rainbow-progress-bar"
-            />
+            /> */}
     </form>
   );
 };
