@@ -15,7 +15,7 @@ const CatsPage = () => {
       .then((res) => {
         // console.log(res.data);
         const filteredData = res.data.filter((oneProduct) => {
-          if (oneProduct.animal_type === "cats") {
+          if (oneProduct.animal_type.toLowerCase() === "cats") {
             return true;
           }
         });

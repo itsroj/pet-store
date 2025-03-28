@@ -2,18 +2,19 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import "./AddProduct.css";
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 
 // insert the props from AdminPage here in () to connect files > see file AdminPage Button "Add Product" to see props. Then add them here. also add in axios .then this: setAllProducts([res.data, ...allProducts])
 export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
   const api_url = import.meta.env.VITE_APP_URL;
   const [name, setName] = useState("");
-  const [animalType, setAnimalType] = useState("");
-  const [category, setCategory] = useState("");
+  const [animalType, setAnimalType] = useState("Dogs");
+  const [category, setCategory] = useState("Food & Snacks");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [stock, setStock] = useState("");
   const [image, setImage] = useState("");
+  
 
   // function handleImageChange(event) {
   //   setImage(event.target.value);
@@ -37,6 +38,8 @@ export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
       .then((res) => {
         console.log("a new product", res.data);
         setAllProducts([res.data, ...allProducts]); // this is putting the new product on the top of the list
+        // notifyAdd();
+        setShowForm(false);
       })
       .catch((err) => console.log(err))
       .finally(() => {
@@ -50,7 +53,7 @@ export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
       });
   }
 
-    const notifyAdd = () => toast.success("Product Created");
+// const notifyAdd = () => toast.success("Product Created")
 
   return (
     <form className="addProductForm" onSubmit={handleCreateProduct}>
@@ -75,6 +78,7 @@ export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
           maxLength={7}
           min={0.0}
           max={100.0}
+          step="0.01"
           value={price}
           onChange={(event) => setPrice(event.target.value)}
           required
@@ -96,13 +100,15 @@ export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
         <select
           name="Animal type"
           onChange={(event) => setAnimalType(event.target.value)}
+          // defaultValue="Dogs"
           required
         >
-          <option value="Dogs">Dogs</option>
-          <option value="Cats">Cats</option>
-          <option value="Small Pets">Small Pets</option>
-          <option value="Birds">Birds</option>
-          <option value="Fish">Fish</option>
+          <option value="">none</option>
+          <option value="dogs">Dogs</option>
+          <option value="cats">Cats</option>
+          <option value="small pets">Small Pets</option>
+          <option value="birds">Birds</option>
+          <option value="fish">Fish</option>
         </select>
       </label>
 
@@ -111,7 +117,9 @@ export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
         <select
           name="Category"
           onChange={(event) => setCategory(event.target.value)}
+          // defaultValue="Food & Snacks"
         >
+          <option value="">none</option>
           <option value="Food & Snacks">Food & Snacks</option>
           <option value="Grooming & Hygiene">Grooming & Hygiene</option>
           <option value="Accessories & Furniture">
@@ -149,14 +157,14 @@ export const AddProduct = ({ allProducts, setAllProducts, setShowForm }) => {
       </label>
 
       <button className="submitButton" type="submit" onClick={()=>{
-                      notifyAdd();}}>
+                   }}>
         Add Product
       </button>
-        <ToastContainer 
+        {/* <ToastContainer 
                 theme="light"
                 toastStyle={{ background: 'rgba(53, 35, 14, 0.94)', color: '#fff' }}
                 className="rainbow-progress-bar"
-              />
+              /> */}
     </form>
   );
 };
