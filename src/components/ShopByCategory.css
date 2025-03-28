@@ -8,21 +8,17 @@
   max-width: 1200px;
 }
 
-@media (min-width: 600px) {
-  .categoryPictureContainer {
-    gap: 50px; /* Gap for screens wider than 600px */
-  }
-}
+
 
 @media (min-width: 1400px) {
   .categoryPictureContainer {
-    gap: 80px; /* Gap for screens wider than 600px */
+    gap: 30px; /* Gap for screens wider than 600px */
   }
 }
 
 @media (min-width: 1600px) {
   .categoryPictureContainer {
-    gap: 100px; /* Gap for screens wider than 900px */
+    gap: 40px; /* Gap for screens wider than 900px */
   }
 }
 
